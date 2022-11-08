@@ -1,0 +1,90 @@
+.reg-layout{
+    display: flex;
+    justify-content: center;
+    // padding-left: 25%;
+    // padding-right: 25%;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    min-width: 450px;
+    padding: 30px;
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px 3px #00000029;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+.reg-container{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+
+
+.form-head {
+    text-transform: capitalize;
+    padding: 10px;
+    text-align: center;
+}
+.form-account {
+    padding: 15px;
+}
+.form-container{
+    padding: 10px;
+}
+
+.form-group{
+    display: flex;
+    justify-content:flex-start; 
+    margin-bottom: 10px;
+}
+.form-group ::ng-deep .mat-form-field-wrapper{
+    padding-bottom: 0px;
+}
+
+.mat-form-filed{
+    width: max-content;
+}
+// mat-hint{
+//     font-size: small;
+// }
+.form-field{
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.btn-basic{
+    font-weight: 500;
+    font-size: 16px;
+    color: #1a73e8;
+    text-decoration: none;
+}
+.btn-primary{
+    min-width: 80px;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    background-color: #1a73e8;
+}
+
+.btn-basic:hover{
+    background-color: #d3e5ff;
+    color: #006eff;
+    border-radius: 5px;
+}
+
+.btn-primary:hover{
+    background-color: #006eff;
+    color: rgb(30, 29, 29);
+    box-shadow: 0px 0px 8px gray;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-left: -5px;
+}
