@@ -11,55 +11,60 @@
                 <span style="font-size: 30px ; color: #EA4335">o</span>
                 </div>              
             </div>
-            <div class='form-account'><h1>Create your Fundoo Account</h1></div>           
-          <form class="form-container">
-              <div class="form-group">
-                  <mat-form-field appearance="outline" class="form-field">
+            <div class='form-account'><h1>Create your Fundoo Account</h1>
+            </div>           
+            <form class="form-container" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="form-group" fxLayout="row" fxLayout.lt-lg="column" fxLayout.lt-lg="column" >
+                    <mat-form-field appearance="outline" class="form-field" >
                       <mat-label>First Name</mat-label>
-                      <input matInput placeholder="First Name">
+                      <input matInput type="text" placeholder="First Name" formControlName="firstName" >
+                    <mat-error>First name is required</mat-error>
                   </mat-form-field>
                   <mat-form-field appearance="outline" class="form-field">
-                      <mat-label>Last Name</mat-label>
-                      <input matInput placeholder="Last Name">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Last Name" formControlName="lastName">
+                    <mat-error>Last name is required</mat-error>
                   </mat-form-field>
               </div>
               <div class="form-group">
                   <mat-form-field appearance="outline" class="form-field">
-                      <mat-label>Username</mat-label>
-                      <input matInput placeholder="Password">
+                      <mat-label>Email</mat-label>
+                      <input matInput type="email" placeholder="Ex: example@gmail.com" formControlName="email">
                       <mat-hint>You can use letters, numbers & periods</mat-hint>
                   </mat-form-field>
               </div>
               <div class="form-group form-field">
-                  <a class="btn-basic">Use my current email instesd</a>
+                  <a class="btn-basic">Use my current email instead</a>
               </div>
-              <div class="form-group">
+              <div class="form-group" fxLayout="row" fxLayout.lt-lg="column" fxLayout.lt-lg="column">
                   <mat-form-field appearance="outline" class="form-field">
                       <mat-label>Password</mat-label>
-                      <input matInput placeholder="Password">
+                      <input matInput type="password" placeholder="Password" formControlName="password">
                       <mat-hint>Use 8 or more characters </mat-hint>
+                      <mat-error>Password is required</mat-error>
                   </mat-form-field>
                   <mat-form-field appearance="outline" class="form-field">
                       <mat-label>Confirm</mat-label>
-                      <input matInput placeholder="Confirm">
+                      <input matInput type="password" placeholder="Confirm" formControlName="confirmPassword">
+                      <mat-error>Confirm Password is required</mat-error>
                       
                   </mat-form-field>
               </div>
               <div class="form-group form-field">
                   <section class="example-section">
-                      <mat-checkbox class="example-margin">Show Password</mat-checkbox>
+                    <mat-checkbox class="example-margin" >Show Password</mat-checkbox>
                   </section>
               </div>
               
               <div class="form-group buttons">
-                  <a class="btn-basic ">Sign in instesd</a>
-                  <a class="btn-primary ">Register</a>
+                <a class="btn-basic ">Signin instead</a>
+                <a class="btn-primary ">Next</a>
               </div>
           </form>
       </div>
-      <div class="reg-img">
-           <img src="../../../assets/account.svg" alt="" width="244" height="244" class=""> 
-          <p>One account. All of Fundoo working for you.</p>
+      <div class="reg-img" fxLayout="column" fxLayoutAlign="center center" fxHide fxShow.gt-sm>
+           <img src="../../../assets/account.svg" alt=""> 
+          <div class="imgtext">One account. All of Fundoo working for you.</div>
       </div>
   </div>
   </div>

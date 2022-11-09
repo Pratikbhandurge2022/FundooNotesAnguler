@@ -1,8 +1,7 @@
 .reg-layout{
     display: flex;
     justify-content: center;
-    // padding-left: 25%;
-    // padding-right: 25%;
+    
 }
 .container{
     display: flex;
@@ -59,16 +58,15 @@
 
 .btn-basic{
     font-weight: 500;
-    font-size: 16px;
     color: #1a73e8;
-    text-decoration: none;
+    padding: 10px;
 }
 .btn-primary{
-    min-width: 80px;
-    font-size: 16px;
     color: white;
     font-weight: 500;
     background-color: #1a73e8;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .btn-basic:hover{
@@ -79,8 +77,8 @@
 
 .btn-primary:hover{
     background-color: #006eff;
-    color: rgb(30, 29, 29);
-    box-shadow: 0px 0px 8px gray;
+    color: black;
+    box-shadow: 0px 0px 8px black;
 }
 
 .buttons{
