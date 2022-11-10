@@ -28,9 +28,10 @@
               </div>
               <div class="form-group">
                   <mat-form-field appearance="outline" class="form-field">
-                      <mat-label>Email</mat-label>
+                      <mat-label>Username/Email</mat-label>
                       <input matInput type="email" placeholder="Ex: example@gmail.com" formControlName="email">
                       <mat-hint>You can use letters, numbers & periods</mat-hint>
+                      <mat-error>Username is reqiured</mat-error>
                   </mat-form-field>
               </div>
               <div class="form-group form-field">
@@ -57,8 +58,8 @@
               </div>
               
               <div class="form-group buttons">
-                <a class="btn-basic ">Signin instead</a>
-                <a class="btn-primary ">Next</a>
+                <button mat-button class="btn-basic" routerLink="/login">Sign in instesd</button>
+                <button mat-raised-button type="submit" class="btn-primary" color="primary" >Signup</button>
               </div>
           </form>
       </div>
