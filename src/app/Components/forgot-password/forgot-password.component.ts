@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';  
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Userservice } from 'src/app/Services/userServices/user.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -9,32 +10,44 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ForgotPasswordComponent implements OnInit {
 
   forgotPasswordForm!: FormGroup;
-    submitted = false;
+  submitted = false;
 
-    constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private userService: Userservice) { }
 
-    ngOnInit() {
-        this.forgotPasswordForm = this.formBuilder.group({
-            email: ['', [Validators.required, Validators.email]],
-        });
-    }
-    get f() { return this.forgotPasswordForm.controls; }
+  ngOnInit() {
+    this.forgotPasswordForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+    });
+  }
+  get f() { return this.forgotPasswordForm.controls; }
 
-    onSubmit() {
-      this.submitted = true;
+  onSubmit() {
+    this.submitted = true;
+    
+    if (this.forgotPasswordForm.valid) {
+      console.log('valid data', this.forgotPasswordForm.value);
+      console.log('do api call');
 
-      // stop here if form is invalid
-      if (this.forgotPasswordForm.invalid) {
-          return;
+      // do api calling
+      let Data = {
+        email: this.forgotPasswordForm.value.email
       }
+      
+      console.log(Data)
+      this.userService.forgotPassword(Data).subscribe((response: any)=>{
+        console.log('Reset link sent successfully', response);
 
-      // display form values on success
-      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.forgotPasswordForm.value, null, 4));
+      })
+    }
+    else {
+      console.log('invalid data', this.forgotPasswordForm.value);
+      console.log('no api call');
+    }
+
   }
 
   onReset() {
-      this.submitted = false;
-      this.forgotPasswordForm.reset();
+    this.submitted = false;
+    this.forgotPasswordForm.reset();
   }
-
 }

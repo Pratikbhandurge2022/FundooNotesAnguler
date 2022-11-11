@@ -1,47 +1,51 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Userservice } from 'src/app/Services/userServices/user.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit(): void {
-//   }
-
-// }
-loginForm!: FormGroup;
+    loginForm!: FormGroup;
     submitted = false;
-
-    constructor(private formBuilder: FormBuilder) { }
-
+    constructor(private formBuilder: FormBuilder, private userService: Userservice) { }
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
             email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required, Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[&%$#@?^*!~]).{8,}$")]],
+            password: ['', [Validators.required, Validators.minLength(8)]]
         });
     }
-        // convenience getter for easy access to form fields
-        get f() { return this.loginForm.controls; }
-        onSubmit() {
-          this.submitted = true;
 
-          // stop here if form is invalid
-          if (this.loginForm.invalid) {
-              return;
-          }
+    onSubmit() {
+        if (this.loginForm.valid) {
+            console.log("valid data", this.loginForm.value);
+            console.log("do api call");
 
-          // display form values on success
-          alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
-      }
+            // do api calling
+            let Data = {
+                email: this.loginForm.value.email,
+                password: this.loginForm.value.password
+            }
+            this.userService.login(Data).subscribe((res: any) => {
+                console.log('Login successful', res);
+                console.log(Data);
+            })
+        }
+        else {
+            console.log('invalid data', this.loginForm.value);
+            console.log('no api call');
+        }
 
-      onReset() {
-          this.submitted = false;
-          this.loginForm.reset();
-      }
+
+
+
+    }
+
+    onReset() {
+        this.submitted = false;
+        this.loginForm.reset();
+    }
 
 }

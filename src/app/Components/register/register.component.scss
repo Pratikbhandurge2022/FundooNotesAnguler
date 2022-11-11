@@ -1,10 +1,11 @@
-.reg-layout{
+.reg-layout {
     display: flex;
     justify-content: center;
     padding-left: 20%;
     padding-right: 20%;
 }
-.container{
+
+.container {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -17,12 +18,14 @@
     margin-bottom: 40px;
 
 }
-.reg-container{
+
+.reg-container {
     display: flex;
     width: 60%;
     flex-direction: column;
 }
-.reg-img{
+
+.reg-img {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,61 +41,69 @@
     text-transform: capitalize;
     padding: 10px;
 }
+
 .form-account {
     padding: 15px;
 }
-.form-container{
+
+.form-container {
     padding: 10px;
 }
 
-.form-group{
+.form-group {
     display: flex;
-    justify-content:flex-start; 
+    justify-content: flex-start;
     margin-bottom: 10px;
 }
 
-.mat-form-filed{
+.mat-form-filed {
     width: max-content;
 }
-.mat-hint{
+
+.mat-hint {
     font-size: small;
 }
-.form-field{
+
+.form-field {
     width: 100%;
     margin-left: 5px;
     margin-right: 5px;
 }
+
 .mat-flat-button {
     width: 100%;
     border: none;
     background-color: transparent;
-  }
-.btn-basic{
+}
+
+.btn-basic {
     font-weight: 500;
     color: #1a73e8;
     padding: 10px;
     border: none;
 }
-.btn-basic:hover{
+
+.btn-basic:hover {
     background-color: #d3e5ff;
     color: #006eff;
     border-radius: 5px;
 }
 
-.btn-primary{
+.btn-primary {
     color: white;
     font-weight: 600;
     background-color: #1a73e8;
     padding: 10px;
     border: none;
 }
-.btn-primary:hover{
+
+.btn-primary:hover {
     background-color: #006eff;
     color: black;
     box-shadow: 0px 0px 8px black;
 }
 
-.buttons{
+.buttons {
     display: flex;
     justify-content: space-between;
 }

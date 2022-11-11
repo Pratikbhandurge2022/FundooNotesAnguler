@@ -1,10 +1,11 @@
-.reg-layout{
+.reg-layout {
     display: flex;
     justify-content: center;
     padding-left: 20%;
     padding-right: 20%;
 }
-.container{
+
+.container {
     display: flex;
     justify-content: flex-start;
     width: 50%;
@@ -17,12 +18,14 @@
     margin-bottom: 40px;
 
 }
-.reg-container{
+
+.reg-container {
     display: flex;
     min-width: 60%;
     flex-direction: column;
 }
-.reg-img{
+
+.reg-img {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,36 +36,42 @@
     padding-left: 50px;
     padding-right: 50px;
 }
+
 .form-head {
     padding: 15px;
 }
-.form-container{
+
+.form-container {
     padding: 10px;
 }
 
-.form-group{
+.form-group {
     display: flex;
-    justify-content:flex-start; 
+    justify-content: flex-start;
     margin-bottom: 10px;
 }
 
-mat-form-field{
-    width:min-content;
+mat-form-field {
+    width: min-content;
 }
-mat-hint{
+
+mat-hint {
     font-size: small;
 }
-.form-field{
+
+.form-field {
     width: 100%;
     margin-left: 5px;
     margin-right: 5px;
 }
+
 mat-flat-button {
     width: 100%;
     border: none;
     background-color: transparent;
-  }
-.btn-basic{
+}
+
+.btn-basic {
     font-weight: 500;
     font-size: 14px;
     color: #1a73e8;
@@ -70,59 +79,67 @@ mat-flat-button {
     background-color: #e8f0fb;
     border: none;
 }
-.btn-primary{
+
+.btn-primary {
     color: white;
     font-weight: 600;
     background-color: #1a73e8;
     padding: 10px;
     border: none;
 }
-.btn-primary:hover{
+
+.btn-primary:hover {
     background-color: #006eff;
     color: black;
     box-shadow: 0px 0px 8px black;
 }
 
-.btn-basic:hover{
+.btn-basic:hover {
     background-color: #d3e5ff;
     color: #006eff;
     border-radius: 5px;
 }
 
 
-.buttons{
+.buttons {
     display: flex;
     justify-content: space-between;
     border: none;
 }
 
-@media (max-width: 959.9px){ 
-    .reg-container{
+@media (max-width: 959.9px) {
+    .reg-container {
         display: flex;
         min-width: 100%;
         flex-direction: column;
     }
 }
+
 @media (max-width: 550px) {
-    .container{
+    .container {
         max-width: 80%;
         min-width: 290px;
         font-size: 12px;
         padding: 10px;
     }
-    .btn-basic, .btn-primary{
+
+    .btn-basic,
+    .btn-primary {
         font-size: 12px;
         border: none;
     }
 }
+
 @media (max-width: 375px) {
-    .container{
+    .container {
         max-width: 80%;
         min-width: 225px;
         font-size: 12px;
         padding: 10px;
     }
-    .btn-basic, .btn-primary{
+
+    .btn-basic,
+    .btn-primary {
         font-size: 12px;
     }
 }
