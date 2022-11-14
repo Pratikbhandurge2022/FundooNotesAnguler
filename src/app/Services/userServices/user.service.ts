@@ -47,7 +47,7 @@ export class Userservice {
         //'Authorization':`Bearer ${token}`
       })
     }
-    return this.httpService.postService(`https://localhost:44359/api/Users/Reset?password=${Data.Password}&confirmPassword=${Data.confirmPassword}`, Data, false, header);
+    return this.httpService.postService(`https://localhost:44359/api/Users/Reset?password=${Data.password}&confirmPassword=${Data.confirmPassword}`, Data, false, header);
   }
   
 
