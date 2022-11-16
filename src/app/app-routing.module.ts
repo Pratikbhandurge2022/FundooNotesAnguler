@@ -23,10 +23,10 @@ const routes: Routes = [
     path: 'dashboard', component: DashBoardComponent,
     children: [
       { path: 'notes', component: GetAllNotesComponent },
-      {path:'displaynotes', component:DisplayNoteComponent},
+      { path: 'displaynotes', component: DisplayNoteComponent },
       { path: 'trash', component: TrashComponent },
-      { path: 'archive', component: ArchiveComponent},
-      {path: 'take-note', component:TakeNoteComponent}
+      { path: 'archive', component: ArchiveComponent },
+      { path: 'take-note', component: TakeNoteComponent }
 
     ]
 

@@ -4,6 +4,7 @@ import { Userservice } from 'src/app/Services/userServices/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 
+
 @Component({
     selector: 'app-reset-password',
     templateUrl: './reset-password.component.html',
@@ -43,6 +44,7 @@ export class ResetPasswordComponent implements OnInit {
 
             this.userService.resetPassword(Data,this.token).subscribe((response: any) => {
                 console.log('Password changed successfully', response);
+                this.router.navigateByUrl('/login')
 
             })
         }

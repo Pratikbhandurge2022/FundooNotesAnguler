@@ -23,7 +23,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    
+
     if (this.forgotPasswordForm.valid) {
       console.log('valid data', this.forgotPasswordForm.value);
       console.log('do api call');
@@ -32,9 +32,9 @@ export class ForgotPasswordComponent implements OnInit {
       let Data = {
         email: this.forgotPasswordForm.value.email
       }
-      
+
       console.log(Data)
-      this.userService.forgotPassword(Data).subscribe((response: any)=>{
+      this.userService.forgotPassword(Data).subscribe((response: any) => {
         console.log('Reset link sent successfully', response);
 
       })

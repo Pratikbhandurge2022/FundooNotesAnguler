@@ -1,15 +1,20 @@
 <mat-card class="take-note">
+
+
   <div>
     <input matInput class="mat-title" placeholder="Display Title" required>
   </div>
 
-  <!-- <mat-card-actions Layout="row" LayoutAlign="space-between center">
-    <button mat-icon-button class="icons"> <img src="../../../assets/Note-icons/pin.svg" float="left" margin="200px"
-     width="20px" height="20px"></button>
-  </mat-card-actions> -->
-  
-  <mat-card-actions Layout="row" LayoutAlign="space-between center">
+
+  <button class="mat" mat-icon-button matTooltip="Pin" (click)="pinUnPin();" *ngIf="!isPin"> <img
+      src="../../../assets/Note-icons/pin.svg" width="20px" height="20px"></button>
+  <button class="mat" mat-icon-button matTooltip="Unpin" (click)="pinUnPin();" *ngIf="isPin"> <img
+      src="../../../assets/Note-icons/pinned.svg" width="20px" height="20px"></button>
+
+
+  <mat-card-actions fxLayout="row" fxLayoutAlign="space-between center">
     <app-icons></app-icons>
+
   </mat-card-actions>
 
 </mat-card>
