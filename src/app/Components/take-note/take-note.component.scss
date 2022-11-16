@@ -3,21 +3,21 @@
 //     margin: 0px 20% 0px 20%;
 // }
 .take-note{
-    margin: 0px 20% 0px 20%;
+    margin: 30px 200px 30px 400px;
     display: flex;
     width: 580px;
     flex-direction: column;
     align-content: center;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 1px 1px 4px gray;
     border: 1px solid lightgray;
-    align-items: flex-end;
 }
-
-
-
 button:hover{
     background-color: rgb(247, 233, 217) ;
+    align-items: flex-end;
+}
+button:hover{
+    align-items: flex-end;
 }
 
  ::placeholder{
@@ -29,12 +29,16 @@ button:hover{
 
 @media (max-width: 800px) {
    .take-note{
-       width: 450px ;
+
+    
+          
+            
+    
+
+          
+    
+    
+  
+       width: 330px ;
    }
 }
-
- @media (max-width: 620px) {
-    .take-note{
-        width: 350px ;
-    }
- }

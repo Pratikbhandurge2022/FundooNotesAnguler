@@ -11,6 +11,7 @@ import {MatListModule} from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 
+
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -21,12 +22,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 import { DashBoardComponent } from './Components/dash-board/dash-board.component';
-import { GetAllNotesComponent } from './Components/get-all-notes/get-all-notes.component';
 import { ArchiveComponent } from './Components/archive/archive.component';
 import { TrashComponent } from './Components/trash/trash.component';
-import { TakeNoteComponent } from './Components/take-note/take-note.component';
 import { DisplayNoteComponent } from './Components/display-note/display-note.component';
 import { IconsComponent } from './Components/icons/icons.component';
+import { MatButton } from '@angular/material/button';
+import { TakeNoteComponent } from './Components/take-note/take-note.component';
+import { GetAllNotesComponent } from './Components/get-all-notes/get-all-notes.component';
 
 
 @NgModule({
@@ -37,12 +39,12 @@ import { IconsComponent } from './Components/icons/icons.component';
     ForgotPasswordComponent,
     ResetPasswordComponent,
     DashBoardComponent,
-    GetAllNotesComponent,
     ArchiveComponent,
     TrashComponent,
-    TakeNoteComponent,
     DisplayNoteComponent,
     IconsComponent,
+    GetAllNotesComponent,
+    TakeNoteComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,7 @@ import { IconsComponent } from './Components/icons/icons.component';
     MatListModule,
     MatIconModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

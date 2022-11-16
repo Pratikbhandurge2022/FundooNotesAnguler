@@ -1,22 +1,25 @@
 .take-note{
-    margin: 30px;
+    margin: 70px;
     display: flex;
     flex-direction: column;
-    align-content: flex-end;
+    align-content:right;
     border-radius: 5px;
     box-shadow: 1px 1px 4px gray;
     border: 1px solid lightgray;
     max-width: 300px;
-    align-items: flex-end;
+    
+  
     
 }
-
-.button:hover{
-    background-color: rgb(247, 233, 217) ;
+.icons{
+    margin-right: 500px;
+    text-align: right;
+ 
+  }
+.image{
+    align-items: flex-end;
+    float: left;
 }
-.button-basic {
-    font-weight: 500;
-    color: #1a73e8;
-    padding: 10px;
-    border: none;
+button:hover{
+    background-color: rgb(247, 233, 217) ;
 }
