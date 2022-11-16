@@ -1,25 +1,20 @@
+
 <mat-card class="take-note" fxFlex="noshrink">
 
-    <div *ngIf="takeNote" fxLayout="row" fxLayoutAlign="space-between center">
-      <mat-card-title > <input matInput placeholder="Title" required> </mat-card-title>
-      <button mat-icon-button> <img src="../../../assets/Note-icons/pin.svg" width="20px" height="20px"></button>
-      <!-- <button mat-icon-button> <img src="/assets/Note-icons/pinned.svg" width="20px" height="20px"></button> -->
+    <div *ngIf="takeNote" Layout="row" LayoutAlign="start">
+        <mat-card-title > <input matInput placeholder="Title" required> </mat-card-title>
+      <!--<button mat-icon-button> <img src="../../../assets/Note-icons/pin.svg" width="20px" height="20px"></button>-->
+      
     </div>
   
-    <div (click)="createNote()" fxLayout="row" fxLayoutAlign="space-between center" >
-      <!-- <mat-card-subtitle  >  -->
-        <input class="create" matInput placeholder="Take a note..." style="width: 400px;" required> 
-      <!-- </mat-card-subtitle> -->
-      <div *ngIf="!takeNote" fxLayoutAlign="space-between center" fxFlex="noshrink">
-        <!-- <button mat-icon-button> <img src="../../../assets/Note-icons/check_box.svg" width="24px" height="24px"></button>
-        <button mat-icon-button> <img src="../../../assets/Note-icons/brush.svg" width="24px" height="24px"></button>
-        <button mat-icon-button> <img src="../../../assets/Note-icons/image.svg" width="24px" height="24px"></button> -->
-      </div>
+    <div (click)="createNote()" Layout="row" LayoutAlign="space-between center" >
+        <input class="create" matInput placeholder="Take a note..." style="width: 400px;" required>  
+      
     </div>
   
-      <mat-card-actions *ngIf="takeNote" fxLayout="row" fxLayoutAlign="space-between center">
+      <mat-card-actions *ngIf="takeNote" fxLayout="row" LayoutAlign="space-between center">
         
-        <button mat-flat-button (click)="closeNote();">Close</button>
+        <button mat-flat-button matTooltip="Create Note" (click)="createNote();">Close</button>
       </mat-card-actions>
   
     </mat-card>

@@ -42,7 +42,7 @@ import { IconsComponent } from './Components/icons/icons.component';
     TrashComponent,
     TakeNoteComponent,
     DisplayNoteComponent,
-    IconsComponent
+    IconsComponent,
   ],
   imports: [
     BrowserModule,

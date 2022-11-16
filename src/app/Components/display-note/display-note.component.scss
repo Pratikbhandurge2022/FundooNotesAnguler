@@ -1,14 +1,22 @@
 .take-note{
-    margin: 10px;
+    margin: 30px;
     display: flex;
     flex-direction: column;
-    align-content: center;
+    align-content: flex-end;
     border-radius: 5px;
     box-shadow: 1px 1px 4px gray;
     border: 1px solid lightgray;
     max-width: 300px;
+    align-items: flex-end;
+    
 }
 
-button:hover{
+.button:hover{
     background-color: rgb(247, 233, 217) ;
+}
+.button-basic {
+    font-weight: 500;
+    color: #1a73e8;
+    padding: 10px;
+    border: none;
 }
