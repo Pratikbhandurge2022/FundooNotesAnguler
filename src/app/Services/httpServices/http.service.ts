@@ -11,9 +11,10 @@ export class Httpservice {
     return this.httpClient.post(url, Data, token && Options);
   }
 
-  getService(url: any, Data: any, token: boolean = false, Options: any={}) {
-    return this.httpClient.post(url, Data, token && Options);
+  getService(url: any, token: boolean = false, Options: any={}) {
+    return this.httpClient.post(url, token && Options);
   }
+  
   DeleteService(url: any, Data: any, token: boolean = false, Options: any={}) {
     return this.httpClient.post(url, Data, token && Options);
   }

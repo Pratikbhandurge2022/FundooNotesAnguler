@@ -26,7 +26,6 @@ import { ArchiveComponent } from './Components/archive/archive.component';
 import { TrashComponent } from './Components/trash/trash.component';
 import { DisplayNoteComponent } from './Components/display-note/display-note.component';
 import { IconsComponent } from './Components/icons/icons.component';
-import { MatButton } from '@angular/material/button';
 import { TakeNoteComponent } from './Components/take-note/take-note.component';
 import { GetAllNotesComponent } from './Components/get-all-notes/get-all-notes.component';
 

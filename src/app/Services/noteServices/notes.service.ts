@@ -22,28 +22,27 @@ export class NotesService {
         'Authorization': `Bearer ${this.token}`
       })
     }
-    return this.httpService.postService('https://localhost:44359/api/Notes/Add', reqData, true, header);
+    return this.httpService.postService('https://localhost:44359/api/Notes/AddNote', reqData, true, header);
+  }
+  getNotes(){
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'Authorization':`Bearer ${this.token}`
+      })
+    }
+    return this.httpService.getService('https://localhost:44359/api/Notes/AllNotes', true); 
   }
 
-  getAllNotes(reqData: any) {
+  displayNote(id: any) {
+    console.log(id)
     let header = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'Authorization': `Bearer ${this.token}`
       })
     }
-    return this.httpService.getService('https://localhost:44359/api/Notes/AllNotes', reqData, true, header);
+    return this.httpService.getService('Notes/View/'+id, true,);
   }
-
-  // displayNote(id : any){
-  //    console.log(id)
-  //   let header = {
-  //     headers:new HttpHeaders({
-  //       'Content-type':'application/json',
-  //       'Authorization':`Bearer ${this.token}`
-  //     })
-  //   }
-  //   return this.httpService.getService('Notes/View/'+id, true);
-  // }
 
 }
