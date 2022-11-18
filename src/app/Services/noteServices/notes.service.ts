@@ -7,42 +7,43 @@ import { Httpservice } from '../httpServices/http.service';
   providedIn: 'root'
 })
 export class NotesService {
-  token: any;
+  token : any;
 
-  constructor(private httpService: Httpservice) {
+  constructor(private httpService : Httpservice) { 
     this.token = localStorage.getItem('token');
 
   }
 
-  createNote(reqData: any) {
-    console.log(reqData)
+  createNote(reqData : any){
+     console.log(reqData)
     let header = {
-      headers: new HttpHeaders({
+      headers:new HttpHeaders({
         'Content-type': 'application/json',
         'Authorization': `Bearer ${this.token}`
       })
     }
     return this.httpService.postService('https://localhost:44359/api/Notes/AddNote', reqData, true, header);
   }
+
   getNotes(){
     let header = {
       headers:new HttpHeaders({
-        'Content-type':'application/json',
+        'Content-type': 'application/json',
+        'Authorization':`Bearer `+this.token
+      })
+    }
+    return this.httpService.getService( 'https://localhost:44359/api/Notes/AllNotes',true,header);
+  }
+
+  displayNote(id : any){
+     console.log(id)
+    let header = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
         'Authorization':`Bearer ${this.token}`
       })
     }
-    return this.httpService.getService('https://localhost:44359/api/Notes/AllNotes', true); 
+    return this.httpService.getService('Notes/View/'+id, true);
   }
-
-  displayNote(id: any) {
-    console.log(id)
-    let header = {
-      headers: new HttpHeaders({
-        'Content-type': 'application/json',
-        'Authorization': `Bearer ${this.token}`
-      })
-    }
-    return this.httpService.getService('Notes/View/'+id, true,);
-  }
-
+  
 }

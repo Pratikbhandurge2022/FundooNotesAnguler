@@ -9,38 +9,37 @@ import { NotesService } from 'src/app/Services/noteServices/notes.service';
 })
 export class TakeNoteComponent implements OnInit {
   show=false;
-   createNoteForm!:FormGroup;
-   submitted=false;
-  constructor(private formbuilder:FormBuilder, private note:NotesService) { }
+  createNoteForm!:FormGroup;
+  submitted=false;
+ constructor(private formbuilder:FormBuilder, private note:NotesService) { }
 
-  ngOnInit(): void {
-    this.createNoteForm=this.formbuilder.group({
-      title:['',Validators.required],
-      description:['',Validators.required]
-    });
-  }
+ ngOnInit(): void {
+   this.createNoteForm=this.formbuilder.group({
+     title:['',Validators.required],
+     description:['',Validators.required]
+   });
+ }
 isShow(){
-  this.show=true;
+ this.show=true;
 }
 close(){
-  this.show=false;
-  this.submitted=true;
-  if(this.createNoteForm.valid){
-    console.log("notes created successfully");
-    let resdata={
-      title:this.createNoteForm.value.title,
-      note:this.createNoteForm.value.description
-    }
-    console.log(resdata);
-    this.note.createNote(resdata).subscribe((result:any)=>{
-      console.log(result);
-
-    })
-  }
-  
+ this.show=false;
+ this.submitted=true;
+ if(this.createNoteForm.valid){
+   console.log("notes created successfully");
+   let resdata={
+     title:this.createNoteForm.value.title,
+     note:this.createNoteForm.value.description
+   }
+   console.log(resdata);
+   this.note.createNote(resdata).subscribe((result:any)=>{
+     console.log(result);
+   })
+ }
+ 
 }
 onSubmit(){
-  this.submitted=true;
+ this.submitted=true;
 
 }
 }
