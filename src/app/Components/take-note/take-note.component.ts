@@ -16,7 +16,7 @@ export class TakeNoteComponent implements OnInit {
  ngOnInit(): void {
    this.createNoteForm=this.formbuilder.group({
      title:['',Validators.required],
-     description:['',Validators.required]
+     note:['',Validators.required]
    });
  }
 isShow(){
@@ -29,7 +29,7 @@ close(){
    console.log("notes created successfully");
    let resdata={
      title:this.createNoteForm.value.title,
-     note:this.createNoteForm.value.description
+     note:this.createNoteForm.value.note
    }
    console.log(resdata);
    this.note.createNote(resdata).subscribe((result:any)=>{

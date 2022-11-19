@@ -1,14 +1,12 @@
-<mat-card class="take-note">
-  <div>
-    <input matInput class="mat-title" placeholder="Display Title" required>
+<div class="boxsize">
+  <div *ngFor="let notes of childMessage" class="con">
+    <mat-card class="mat-box">
+      <div (click)="openDialog(notes)">
+        <h2 (click)="openDialog(notes)">{{notes.title}}</h2>
+        <p (click)="openDialog(notes)">{{notes.note}}</p>
+        <div> {{notes.noteId}}</div>
+      </div>
+      <app-icons></app-icons>
+    </mat-card>
   </div>
-
-  <button class="mat" mat-icon-button matTooltip="Pin" (click)="pinUnPin();" *ngIf="!isPin"> <img
-      src="../../../assets/Note-icons/pin.svg" width="20px" height="20px"></button>
-  <button class="mat" mat-icon-button matTooltip="Unpin" (click)="pinUnPin();" *ngIf="isPin"> <img
-      src="../../../assets/Note-icons/pinned.svg" width="20px" height="20px"></button>
-
-  <mat-card-actions fxLayout="row" fxLayoutAlign="space-between center">
-    <app-icons></app-icons>
-  </mat-card-actions>
-</mat-card>
+</div>

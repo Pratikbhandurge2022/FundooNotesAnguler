@@ -35,15 +35,15 @@ export class NotesService {
     return this.httpService.getService( 'https://localhost:44359/api/Notes/AllNotes',true,header);
   }
 
-  displayNote(id : any){
-     console.log(id)
-    let header = {
+  updateNotes(data:any, noteId:any){
+     console.log(this.token);
+    let header={
       headers:new HttpHeaders({
         'Content-Type':'application/json',
-        'Authorization':`Bearer ${this.token}`
+        'Authorization':'Bearer '+this.token
       })
     }
-    return this.httpService.getService('Notes/View/'+id, true);
-  }
+    return this.httpService.putservice('https://localhost:44359/api/Notes/Update?NoteId='+noteId,data,true,header);
+   }
   
 }

@@ -1,2 +1,6 @@
-<app-take-note></app-take-note>
-<app-display-note></app-display-note>
+<!-- <app-take-note></app-take-note>
+<app-display-note></app-display-note> -->
+<!-- <app-update-notes></app-update-notes> -->
+<!-- <app-dash-board></app-dash-board> -->
+<app-take-note (messageEvent)="receiveMeassage($event)"></app-take-note>
+ <app-display-note [childMessage]="noteArray"></app-display-note>

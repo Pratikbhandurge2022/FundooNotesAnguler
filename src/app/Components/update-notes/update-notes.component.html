@@ -1,0 +1,18 @@
+<div style="padding: 10px;">
+    <div class="text-Title">
+      <mat-card-title><input matInput [(ngModel)]="title"
+          style="width: 400px; height: 30px; border: none; outline: none;"></mat-card-title>
+    </div>
+    <div class="text-body">
+      <input matInput [(ngModel)]="note" style="width: 400px; height: 30px; border: none; outline: none;">
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between end">
+      <div class="icons">
+        <app-icons></app-icons>
+      </div>
+      <div>
+        <button mat-icon-button (click)="closeDialog()" style="opacity: 0.9;">Close</button>
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,37 @@
+.text-Title{
+    font-size  : 1.375rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    padding-bottom: 12px;
+    padding-top: 0px;
+   //  display:inline-flex;
+   outline: none;
+}
+
+.text-body{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    padding: 4px 0px 12px 0px;
+    overflow: auto;
+   //  display: block;
+   outline: none;
+}
+
+.notesbutton{
+   display: flex;
+   gap: 19px;
+   border: none;
+   background: none;
+   cursor: pointer;
+   img{
+       height: 20px;
+       width: 20px;
+       padding-top: 10px;
+   }
+}
+
+.icons{
+   display: flex;
+   gap: 20px;
+}

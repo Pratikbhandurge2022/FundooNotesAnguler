@@ -1,31 +1,19 @@
-.take-note {
-    margin: 20pt;
+.mat-box{
+    height: 140px;
+    width:px;
+    margin-top: 30px;
+}
+
+.boxsize
+{
+    display: flex; flex-flow: row wrap;padding-left: 54px;
+}
+
+.con{
+    padding-left: 36px;
     display: flex;
-    flex-direction: column;
-    align-content: right;
-    border-radius: 5px;
-    box-shadow: 1px 1px 4px gray;
-    border: 1px solid lightgray;
-    max-width: 300px;
 }
 
-.mat {
-    margin-left: 260px;
-
-    margin-top: -50px;
-}
-
-.icons {
-    margin-right: 500px;
-    text-align: right;
-
-}
-
-.image {
-    align-items: flex-end;
-    float: left;
-}
-
-button:hover {
-    background-color: rgb(247, 233, 217);
+.con>mat-card{
+padding: 25px;
 }
