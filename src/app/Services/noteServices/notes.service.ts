@@ -43,7 +43,17 @@ export class NotesService {
         'Authorization':'Bearer '+this.token
       })
     }
-    return this.httpService.putservice('https://localhost:44359/api/Notes/Update?NoteId='+noteId,data,true,header);
+    return this.httpService.putservice('https://localhost:44359/api/Notes/Update?noteid='+noteId,data,true,header);
+   }
+
+   ArchiveNotes(data:any ){
+    let header={
+      headers:new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization':'Bearer '+this.token
+      })
+    }
+    return this.httpService.putservice('https://localhost:44359/api/Notes/Archive?noteid='+data,{},true,header);
    }
   
 }

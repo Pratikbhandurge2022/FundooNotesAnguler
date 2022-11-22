@@ -4,9 +4,9 @@
       <div (click)="openDialog(notes)">
         <h2 (click)="openDialog(notes)">{{notes.title}}</h2>
         <p (click)="openDialog(notes)">{{notes.note}}</p>
-        <div> {{notes.noteId}}</div>
+        <!-- <div> {{notes.noteId}}</div> -->
       </div>
-      <app-icons></app-icons>
+      <app-icons [noteObject]="notes"></app-icons>
     </mat-card>
   </div>
 </div>

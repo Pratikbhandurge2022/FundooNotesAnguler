@@ -18,9 +18,9 @@ export class GetAllNotesComponent implements OnInit {
   getAllNotes() {
 
     this.notes.getNotes().subscribe((response: any) => {
-      console.log(response);
-      this.noteArray = response.data;
-      //this.noteArray=this.noteArray.reverse()
+      //console.log(response);
+      this.noteArray = response;
+      this.noteArray=this.noteArray.reverse()
       console.log(this.noteArray)
     })
   }

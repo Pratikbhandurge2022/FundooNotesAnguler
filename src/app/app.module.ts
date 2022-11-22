@@ -50,6 +50,7 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes.com
     IconsComponent,
     DisplayNoteComponent,
     UpdateNotesComponent,
+  
     
   ],
   imports: [
