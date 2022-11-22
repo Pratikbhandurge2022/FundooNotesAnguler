@@ -9,7 +9,7 @@ import { UpdateNotesComponent } from '../update-notes/update-notes.component';
 })
 export class DisplayNoteComponent implements OnInit {
   @Input() childMessage: any;
-  @Output() getAllNotes = new EventEmitter<string>();
+ 
 
   //show=false;
   constructor(public dialog: MatDialog) { }
@@ -25,7 +25,13 @@ export class DisplayNoteComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(response => {
       console.log('The dialog was closed', response);
-      this.getAllNotes.emit(response);
+      //this.getAllNotes.emit(response);
     })
   }
+  // recieveArchiveNote($event: any) {
+  //   this.childMessage.emit($event);
+  // }
+  
+  
+  
 }
