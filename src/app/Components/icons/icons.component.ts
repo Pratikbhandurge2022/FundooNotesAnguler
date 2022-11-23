@@ -7,21 +7,21 @@ import { NotesService } from 'src/app/Services/noteServices/notes.service';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
-  @Input()noteObject:any
+  @Input() noteObject: any
 
-  constructor(public note:NotesService) { }
+  constructor(public note: NotesService) { }
 
   ngOnInit(): void {
   }
   onArchive() {
-  
-    let reqData={
-      noteID:[this.noteObject.noteID],
+
+    let reqData = {
+      noteID: [this.noteObject.noteID],
     }
     console.log(this.noteObject.noteID);
     this.note.ArchiveNotes(this.noteObject.noteID).subscribe((response: any) => {
-      console.log("Note Archived Successfully",response);
-      
+      console.log("Note Archived Successfully", response);
+
     })
   }
 
