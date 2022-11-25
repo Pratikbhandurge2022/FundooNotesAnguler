@@ -11,28 +11,24 @@ import { DisplayNoteComponent } from './Components/display-note/display-note.com
 import { IconsComponent } from './Components/icons/icons.component';
 import { TakeNoteComponent } from './Components/take-note/take-note.component';
 import { GetAllNotesComponent } from './Components/get-all-notes/get-all-notes.component';
-
+import { AuthgaurdGuard } from './authgaurd.guard';
 
 
 const routes: Routes = [
+  { path: '', redirectTo: "/login", pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forgot', component: ForgotPasswordComponent },
   { path: 'reset', component: ResetPasswordComponent },
   {
-    path: 'dashboard', component: DashBoardComponent,
+    path: 'dashboard', component: DashBoardComponent, canActivate: [AuthgaurdGuard],
     children: [
       { path: 'notes', component: GetAllNotesComponent },
       { path: 'trash', component: TrashComponent },
       { path: 'archive', component: ArchiveComponent },
-      
 
     ]
-
-
   }
-
-
 ];
 
 @NgModule({

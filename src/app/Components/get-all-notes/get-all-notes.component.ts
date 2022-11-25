@@ -14,26 +14,6 @@ export class GetAllNotesComponent implements OnInit {
   ngOnInit(): void {
     this.getAllNotes();
   }
-  // getAllNotes(){
-  //   this.notes.getNotes().subscribe((response:any)=>{
-  //     // console.log(response);
-  //     this.noteArray=response;
-  //     this.noteArray=this.noteArray.reverse()
-  //     this.noteArray = this.noteArray.filter((object: any) => {
-  //           return object.archieve == false;
-
-  //           })
-
-  //    console.log(this.noteArray)
-  //   })
-  //   }
-  // receiveMessage($event: any) {
-  //   console.log($event);
-  //   this.getAllNotes();
-  // }
-
-
-
 
   getAllNotes() {
 
@@ -43,9 +23,9 @@ export class GetAllNotesComponent implements OnInit {
       this.noteArray = this.noteArray.reverse()
       console.log(this.noteArray)
       this.noteArray = this.noteArray.filter((object: any) => {
-        return object.isArchive == false;
+        return object.isArchive === false && object.isTrash===false;
       })
-      //console.log(this.noteArray)
+      console.log(this.noteArray)
     })
   }
   receiveMeassage(e: any) {

@@ -8,6 +8,7 @@ import { Httpservice } from '../httpServices/http.service';
 })
 export class NotesService {
   token : any;
+  updateColor: any;
 
   constructor(private httpService : Httpservice) { 
     this.token = localStorage.getItem('token');
@@ -55,6 +56,35 @@ export class NotesService {
     }
     return this.httpService.putservice('https://localhost:44359/api/Notes/Archive?noteid='+data,{},true,header);
    }
-  
-  
+
+   TrashNotes(data:any){
+    console.log(data);
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization':'Bearer '+this.token
+      })
+    }
+    return this.httpService.putservice('https://localhost:44359/api/Notes/Trash?noteid='+data,{},true,header);
+  }
+  //https://localhost:44359/api/Notes/Trash?noteid=83
+
+  NoteColor(data:any){
+    console.log(data);
+    let header = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': 'Bearer '+ this.token
+        
+      })
+    }
+    //https://localhost:44359/api/Notes/Color?noteid=10&color=m 
+    return this.httpService.putservice(`https://localhost:44359/api/Notes/Color?noteid=${data.noteID}&color=${data.color}`,{},true,header)
+  }
+
+
+
+
+
+
 }

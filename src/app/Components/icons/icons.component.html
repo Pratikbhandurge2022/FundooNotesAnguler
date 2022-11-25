@@ -1,8 +1,38 @@
 <div class="icons">
-    <a routerLink="."> <img src="../../../assets/Dashboard-icons/Reminder.svg" class="card-icons"></a>
-    <a routerLink="."><img src="../../../assets/Note-icons/collab.svg" class="card-icons"></a>
-    <a routerLink="."> <img src="../../../assets/Note-icons/color.svg" class="card-icons"></a>
-    <a routerLink="."><img src="../../../assets/Note-icons/image.svg" class="card-icons"></a>
-    <a routerLink="."><img src="../../../assets/Note-icons/Archive.svg" class="card-icons" (click)="onArchive()"></a>
-    <a routerLink="."> <img src="../../../assets/Note-icons/more.svg" class="card-icons"></a>
+  <a routerLink="."> <img src="../../../assets/Reminder.svg" class="card-icons" *ngIf="!isTrash"></a>
+  <a routerLink="."><img src="../../../assets/collab.svg" class="card-icons" *ngIf="!isTrash"></a>
+  <a routerLink="."> <img src="../../../assets/color.svg" *ngIf="!isTrash" class="card-icons"
+      [matMenuTriggerFor]="color">
+    <mat-menu #color="matMenu" yPosition="below">
+      <div *ngFor="let color of colorArray" fxLayout="row row wrap" fxLayourAlign="center" class="button-clr">
+
+        <button mat-mini-fab [style.background-color]="color?.colorCode"
+          (click)="selectColor(color?.colorCode)"></button>
+      </div>
+    </mat-menu>
+  </a>
+  <a routerLink="."><img *ngIf="!isArchieve && !isTrash" src="../../../assets/Archive.svg" matTooltip="Archive"
+      class="card-icons" (click)="onArchive()"></a>
+  <a routerLink="."><img *ngIf="isArchieve && !isTrash" src="../../../assets/unArchive.svg" matTooltip="UnArchive"
+      class="card-icons" (click)="onUnArchievenote()"></a>
+
+  <a routerLink="."> <img src="../../../assets/more.svg" class="card-icons" [matMenuTriggerFor]="more" *ngIf="!isTrash">
+    <mat-menu #more="matMenu">
+      <button mat-menu-item class="matmenuBtn" (click)="onDelete()">Delete note</button>
+      <button mat-menu-item class="matmenuBtn">Add Label</button>
+      <button mat-menu-item class="matmenuBtn">Add drawing</button>
+      <button mat-menu-item class="matmenuBtn">Make a copy</button>
+      <button mat-menu-item class="matmenuBtn">Show checkboxes</button>
+      <button mat-menu-item class="matmenuBtn">Copy to google Docs</button>
+    </mat-menu>
+  </a>
+  <div *ngIf="isTrash" class="icons">
+    <a> <img class="card-icons" src="../../../assets/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" matTooltip="Delete forever"
+        (click)="onDelete()"></a>
+    <a> <img class="card-icons" src="../../../assets/restore_from_trash.svg" matTooltip="Restore"
+        (click)="onRestore()"></a>
+  </div>
+
+
+
 </div>

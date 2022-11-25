@@ -1,6 +1,6 @@
 <div class="boxsize">
   <div *ngFor="let notes of childMessage" class="con">
-    <mat-card class="mat-box">
+    <mat-card class="mat-box" [style.background]="notes.color">
       <div (click)="openDialog(notes)">
         <h2 (click)="openDialog(notes)">{{notes.title}}</h2>
         <p (click)="openDialog(notes)">{{notes.note}}</p>

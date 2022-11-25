@@ -12,7 +12,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import {MatMenuModule} from '@angular/material/menu';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AuthgaurdService } from './Services/Authgaurdservice/authgaurd.service';
 
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './Components/register/register.component';
@@ -35,6 +37,8 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes.com
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +54,8 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes.com
     IconsComponent,
     DisplayNoteComponent,
     UpdateNotesComponent,
+ 
+    
   
     
   ],
@@ -70,9 +76,12 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes.com
     MatIconModule ,
     MatCardModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatMenuModule
+    
+
   ],
-  providers: [],
+  providers: [AuthgaurdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
