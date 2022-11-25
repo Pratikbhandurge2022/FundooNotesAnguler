@@ -82,6 +82,20 @@ export class NotesService {
     return this.httpService.putservice(`https://localhost:44359/api/Notes/Color?noteid=${data.noteID}&color=${data.color}`,{},true,header)
   }
 
+  
+  DeleteNotes(data:any){
+    console.log(data);
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization':'Bearer '+this.token
+      })
+    }
+    return this.httpService.Deleteservice('https://localhost:44359/api/Notes/Remove?noteid='+data,{},true,header);
+  }
+
+
+
 
 
 

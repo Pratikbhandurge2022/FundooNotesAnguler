@@ -14,22 +14,23 @@ import { outputAst } from '@angular/compiler';
 export class IconsComponent implements OnInit {
   @Input() noteObject: any;
   //@Output() displayicons = new EventEmitter<string>();
+  
 
 
   isArchieve: boolean = false;
   isTrash: boolean = false;
   colorArray = [{ colorCode: "maroon" },
+  { colorCode: "silver" },
+  { colorCode: "Yellow" },
+  { colorCode: "Purple" },
+  { colorCode: "pink" },
+  { colorCode: "chocolate" },
+  { colorCode: "Wheat" },
+  { colorCode: "indigo" },
+  { colorCode: "hotpink" },
+  { colorCode: "lightblue" },
   { colorCode: "green" },
-  { colorCode: "black" },
-  { colorCode: "#635d19" },
-  { colorCode: "#345920" },
-  { colorCode: "#345920" },
-  { colorCode: "#16504b" },
-  { colorCode: "#2d555e" },
-  { colorCode: "#1e3a5f" },
-  { colorCode: "#3c3f43" },
-  { colorCode: "#42275" },
-  { colorCode: "#5b2245" }];
+  { colorCode: "olive" }];
   noteListId: any;
 
   constructor(private note: NotesService, private route: ActivatedRoute) { }
@@ -60,7 +61,8 @@ export class IconsComponent implements OnInit {
 
     })
   }
-  selectColor(color: any) {
+  selectColor(color: any) 
+  {
     this.noteListId = this.noteObject.color = color;
     let reqData = {
       noteID: this.noteObject.noteID,
@@ -70,15 +72,28 @@ export class IconsComponent implements OnInit {
     this.note.NoteColor(reqData).subscribe((response: any) => {
       console.log(response);
       
-      
     })
   }
-  onDelete() {
+
+  onTrash() {
     let reqData = {
       noteID: [this.noteObject.noteID],
     }
     console.log(reqData)
     this.note.TrashNotes(this.noteObject.noteID).subscribe((response: any) => {
+      console.log("Note trash Successfully", response);
+
+    })
+  }
+
+
+
+  onDelete() {
+    let reqData = {
+      noteID: [this.noteObject.noteID],
+    }
+    console.log(reqData)
+    this.note.DeleteNotes(this.noteObject.noteID).subscribe((response: any) => {
       console.log("Note trash Successfully", response);
 
     })
@@ -91,5 +106,6 @@ export class IconsComponent implements OnInit {
 
     })
   }
+  
 }
   

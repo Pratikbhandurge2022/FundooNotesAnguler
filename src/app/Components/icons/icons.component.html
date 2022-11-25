@@ -18,7 +18,7 @@
 
   <a routerLink="."> <img src="../../../assets/more.svg" class="card-icons" [matMenuTriggerFor]="more" *ngIf="!isTrash">
     <mat-menu #more="matMenu">
-      <button mat-menu-item class="matmenuBtn" (click)="onDelete()">Delete note</button>
+      <button mat-menu-item class="matmenuBtn" (click)="onTrash()">Delete note</button>
       <button mat-menu-item class="matmenuBtn">Add Label</button>
       <button mat-menu-item class="matmenuBtn">Add drawing</button>
       <button mat-menu-item class="matmenuBtn">Make a copy</button>
