@@ -1,2 +1,3 @@
 <!-- <p>archive works!</p> -->
-<app-display-note [childMessage]="archiveList"></app-display-note>
+<!-- <app-display-note [childMessage]="archiveList"></app-display-note> -->
+<app-display-note [childMessage]="archiveList"(archiverefresh)="recivemsg($event)" ></app-display-note>

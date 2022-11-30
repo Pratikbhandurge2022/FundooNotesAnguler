@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateNotesComponent } from '../update-notes/update-notes.component';
 
@@ -10,6 +10,9 @@ import { UpdateNotesComponent } from '../update-notes/update-notes.component';
 export class DisplayNoteComponent implements OnInit {
   @Input() childMessage: any;
   @Output()  getAllNotes: any;
+  @Output() refreshDisplay=new EventEmitter<any>();
+  @Output() messagevent=new EventEmitter<any>();
+  @Output() colorchange=new EventEmitter<any>();
  
 
   //show=false;
@@ -29,10 +32,18 @@ export class DisplayNoteComponent implements OnInit {
       this.getAllNotes.emit(response);
     })
   }
-  // recieveArchiveNote($event: any) {
-  //   this.childMessage.emit($event);
-  // }
-  
-  
+  notearchive(event:any){
+    console.log(event);
+    
+    this.messagevent.emit(event)
+  }
+  iconautorefresh(event:any){
+    console.log(event);   
+    this.refreshDisplay.emit(event)
+    
+  }
+  colorRefresh(event:any){
+   this.colorchange.emit(event)
+  }
   
 }

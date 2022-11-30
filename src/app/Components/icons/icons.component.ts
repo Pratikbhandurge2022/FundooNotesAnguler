@@ -13,22 +13,26 @@ import { outputAst } from '@angular/compiler';
 })
 export class IconsComponent implements OnInit {
   @Input() noteObject: any;
-  //@Output() displayicons = new EventEmitter<string>();
+  @Output() displayicons = new EventEmitter<string>();
+  @Output() refreshcolor=new EventEmitter<any>();
+  @Output() trashrefresh=new EventEmitter<any>();
+  @Output() archiverefresh=new EventEmitter<any>();
   
 
 
   isArchieve: boolean = false;
   isTrash: boolean = false;
-  colorArray = [{ colorCode: "maroon" },
-  { colorCode: "silver" },
+  colorArray = 
+  [{ colorCode: "maroon" },
+  { colorCode: "orange" },
   { colorCode: "Yellow" },
-  { colorCode: "Purple" },
+  { colorCode: "green" },
+  { colorCode: "teal" },
+  { colorCode: "blue" },
+  { colorCode: "darkblue" },
+  { colorCode: "purple" },
   { colorCode: "pink" },
-  { colorCode: "chocolate" },
-  { colorCode: "Wheat" },
-  { colorCode: "indigo" },
-  { colorCode: "hotpink" },
-  { colorCode: "lightblue" },
+  { colorCode: "brown" },
   { colorCode: "green" },
   { colorCode: "olive" }];
   noteListId: any;
@@ -51,13 +55,17 @@ export class IconsComponent implements OnInit {
     console.log(reqData);
     this.note.ArchiveNotes(this.noteObject.noteID).subscribe((response: any) => {
       console.log("Note Archived Successfully", response);
+      //this.displayicons.emit(response);
       // window.location.reload();
+      this.archiverefresh.emit(response);
+      console.log(response)
     })
   }
   onUnArchievenote() {
 
     this.note.ArchiveNotes(this.noteObject.noteID).subscribe((response: any) => {
       console.log(response);
+      this.displayicons.emit(response);
 
     })
   }
@@ -82,6 +90,8 @@ export class IconsComponent implements OnInit {
     console.log(reqData)
     this.note.TrashNotes(this.noteObject.noteID).subscribe((response: any) => {
       console.log("Note trash Successfully", response);
+      this.trashrefresh.emit(response);
+      console.log(response)
 
     })
   }
@@ -95,6 +105,7 @@ export class IconsComponent implements OnInit {
     console.log(reqData)
     this.note.DeleteNotes(this.noteObject.noteID).subscribe((response: any) => {
       console.log("Note trash Successfully", response);
+      // this.trashrefresh.emit(response);
 
     })
   }

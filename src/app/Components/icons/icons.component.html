@@ -1,16 +1,28 @@
 <div class="icons">
   <a routerLink="."> <img src="../../../assets/Reminder.svg" class="card-icons" *ngIf="!isTrash"></a>
   <a routerLink="."><img src="../../../assets/collab.svg" class="card-icons" *ngIf="!isTrash"></a>
-  <a routerLink="."> <img src="../../../assets/color.svg" *ngIf="!isTrash" class="card-icons"
+  <a  routerLink="."> <img src="../../../assets/color.svg" *ngIf="!isTrash" class="card-icons"
       [matMenuTriggerFor]="color">
-    <mat-menu #color="matMenu" yPosition="below">
-      <div *ngFor="let color of colorArray" fxLayout="row row wrap" fxLayourAlign="center" class="button-clr">
-
+    
+    <!-- <mat-menu #color="matMenu" yPosition="below" class="clr-menu">
+      <div fxLayout="row wrap" class="colour" fxLayoutAlign="start center" style="padding-left: 3px;">
+      <div *ngFor="let color of colorArray" fxLayout="row row wrap" fxLayoutAlign="center" >
+        
         <button mat-mini-fab [style.background-color]="color?.colorCode"
-          (click)="selectColor(color?.colorCode)"></button>
+        (click)="selectColor(color?.colorCode)"></button>
       </div>
-    </mat-menu>
+      </div>
+  </mat-menu> -->
+    <mat-menu #color="matMenu" fxLayout="row " fxLayoutAlign="start space-between">
+      <div fxLayout="row wrap" class="colour" fxLayoutAlign="start center" style="padding-left: 3px;">
+          <div *ngFor="let color of colorArray" class="colorBox">
+              <button class="colors" mat-mini-fab (click)="selectColor(color?.colorCode)" mat-icon-button
+                  mat-raised-button [style.background]="color?.colorCode"></button>
+          </div>
+      </div>
+  </mat-menu>
   </a>
+  <a routerLink="."><img src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg" class="card-icons" *ngIf="!isTrash"></a>
   <a routerLink="."><img *ngIf="!isArchieve && !isTrash" src="../../../assets/Archive.svg" matTooltip="Archive"
       class="card-icons" (click)="onArchive()"></a>
   <a routerLink="."><img *ngIf="isArchieve && !isTrash" src="../../../assets/unArchive.svg" matTooltip="UnArchive"

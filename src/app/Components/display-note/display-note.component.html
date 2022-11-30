@@ -6,7 +6,7 @@
         <p (click)="openDialog(notes)">{{notes.note}}</p>
         <!-- <div> {{notes.noteId}}</div> -->
       </div>
-      <app-icons [noteObject]="notes"></app-icons>
+      <app-icons [noteObject]="notes"(archiverefresh)="notearchive($event)" (trashrefresh)=" iconautorefresh($event)" (refreshcolor)=" colorRefresh($event)"></app-icons>
     </mat-card>
   </div>
 </div>

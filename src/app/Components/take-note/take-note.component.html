@@ -1,38 +1,38 @@
 <mat-card class="matcreatenotebox">
-  <form [formGroup]="createNoteForm" (ngSubmit)="close">
-  <div class="" fxLayoutAlign="center start">
-      <div class="container-createnote">
-          <div *ngIf="show">
-              <input type="text" class="inputbox-pannel" placeholder="Title" formControlName="title">
-              <img src="../../../assets/Note-icons/pin.svg" class="pinsicon">
-          </div>
+    <form [formGroup]="createNoteForm" (ngSubmit)="close">
+        <div class="" fxLayoutAlign="center start">
+            <div class="container-createnote">
+                <div *ngIf="show">
+                    <input type="text" class="inputbox-pannel" placeholder="Title" formControlName="title">
+                    <img src="../../../assets/Note-icons/pin.svg" class="pinsicon">
+                </div>
 
 
-            <div style="display:flex ;" *ngIf="!show || show" (click)="isShow()">
-              <input type="text" class="inputbox-pannel" placeholder="Take a note.." formControlName="note">
-              <div class="cardtopimgs" *ngIf="!show">
-                  <!-- <img src="../../../assets/right_icon.svg" class="sideicon">
-              <img src="../../../assets/paint_icon.svg" class="sideicon">
-              <img src="../../../assets/image_icon.svg" class="sideicon"> -->
-            
-              </div>
-          
-              </div>
-         
-          <div>
-          </div>
+                <div style="display:flex ;" *ngIf="!show || show" (click)="isShow()">
+                    <input type="text" class="inputbox-pannel" placeholder="Take a note.." formControlName="note">
+                    <div class="cardtopimgs" *ngIf="!show">
+                        <img src="../../../assets/check_box.svg" class="sideicon">
+                        <img src="../../../assets/brush.svg" class="sideicon">
+                        <img src="../../../assets/image.svg" class="sideicon">
 
-          <div class="clsbtn" *ngIf="show" >
-              <app-icons></app-icons>
-              <div class="btncls">
-              <a routerLink="." (click)="close()" class="closetab">Close</a>
-              <!-- <button mat-flat-button (click)="close();" justify-content="right">Close</button> -->
-          </div>
-          </div>
-          <div>
+                    </div>
 
-          </div>
-      </div>
-  </div>
-  </form>
+                </div>
+
+                <div>
+                </div>
+
+                <div class="clsbtn" *ngIf="show">
+                    <app-icons></app-icons>
+                    <div class="btncls">
+                        <a routerLink="." (click)="close()" class="closetab">Close</a>
+                        <!-- <button mat-flat-button (click)="close();" justify-content="right">Close</button> -->
+                    </div>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </form>
 </mat-card>

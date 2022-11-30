@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NotesService } from 'src/app/Services/noteServices/notes.service';
 
@@ -8,6 +8,7 @@ import { NotesService } from 'src/app/Services/noteServices/notes.service';
   styleUrls: ['./take-note.component.scss']
 })
 export class TakeNoteComponent implements OnInit {
+  @Output()messageEvent = new EventEmitter<any>();
   show=false;
   createNoteForm!:FormGroup;
   submitted=false;
@@ -34,12 +35,17 @@ close(){
    console.log(resdata);
    this.note.createNote(resdata).subscribe((result:any)=>{
      console.log(result);
+     this.messageEvent.emit(result)
    })
  }
  
 }
 onSubmit(){
  this.submitted=true;
+
+}
+receivemessage(event:any){
+  this.messageEvent.emit(event)
 
 }
 }
